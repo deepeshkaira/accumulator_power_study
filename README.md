@@ -97,22 +97,30 @@ Synthesize each variant with Design Compiler using the ASAP7 libraries and timin
 Run PrimeTime with the matching netlist, constraints, libraries, and SAIF file to generate timing and power reports.
 For the clock-gated variant, confirm that PrimeTime recognizes both the source and generated clocks. Check the mapped design to see whether clock gating and operand isolation survived synthesis.
 
-## Power measured
+## Power estimates
 
-All figures below are PrimeTime/PrimePower averaged, pre-layout estimates at
-the ASAP7 `PVT_0P7V_25C` library condition. Values are converted from watts
-to microwatts. No wire-load model or extracted interconnect parasitics were
-used.
+### Design Compiler synthesis estimates
 
-Synthesis power results - DC
-Design Compiler also estimated power after synthesis using the ASAP7 libraries at 0.7 V and 25 °C.
-Power component	Baseline	Operand isolated	Clock + operand gated
-Net switching	1.53 µW	1.56 µW	1.95 µW
-Cell internal	4.99 µW	4.98 µW	3.42 µW
-Leakage	0.0197 µW	0.0221 µW	0.0224 µW
-Total	6.54 µW	6.57 µW	5.40 µW
+Design Compiler estimated power after synthesis using the ASAP7 libraries at
+the `PVT_0P7V_25C` condition. Values are shown in microwatts.
 
-Compared with the baseline, the clock-gated design’s Design Compiler estimate is 1.14 µW lower, a 17.4% reduction (6.54 µW → 5.40 µW). The above is a preliminary synthesis estimate.
+| Power group or component | Baseline | Operand gated | Clock + operand gated |
+|---|---:|---:|---:|
+| Net switching | 1.53 µW | 1.56 µW | 1.95 µW |
+| Cell internal | 4.99 µW | 4.98 µW | 3.42 µW |
+| Leakage | 0.0197 µW | 0.0221 µW | 0.0224 µW |
+| **Total** | **6.54 µW** | **6.57 µW** | **5.40 µW** |
+
+The clock-gated design's estimated total is 1.14 µW lower than the baseline,
+a 17.4% reduction. These are preliminary, low-effort synthesis estimates:
+Design Compiler reported unannotated primary inputs, so they should not be
+compared directly with the SAIF-based results below.
+
+### PrimeTime/PrimePower estimates
+
+The following are averaged, pre-layout estimates at the same library
+condition. Values are converted from watts to microwatts. No wire-load model
+or extracted interconnect parasitics were used.
 
 | Power group or component | Baseline | Operand gated | Clock + operand gated |
 |---|---:|---:|---:|
