@@ -1,4 +1,4 @@
-# 32-bit accumulator power study
+# 32-bit accumulator
 
 This project compares three implementations of a 32-bit unsigned accumulator:
 the baseline design, a design with input operand isolation, and a design with
