@@ -1,0 +1,595 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 10
+Design : accumulator_clock_gated
+Version: W-2024.09-SP3
+Date   : Tue Sep 22 15:24:45 2026
+****************************************
+
+Operating Conditions: PVT_0P7V_25C   Library: asap7sc7p5t_AO_RVT_TT_08302018
+Wire Load Model Mode: top
+
+  Startpoint: enable (input port clocked by clk)
+  Endpoint: u_gate_en_latched_reg
+            (negative level-sensitive latch clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  input external delay                                 1000.00    1000.00 r
+  enable (in)                                             0.00    1000.00 r
+  U155/Y (HB1xp67_ASAP7_75t_R)                          126.67    1126.67 r
+  U261/Y (NOR2xp33_ASAP7_75t_R)                          46.20    1172.88 f
+  u_gate_en_latched_reg/D (DLLx1_ASAP7_75t_R)             0.00    1172.88 f
+  data arrival time                                               1172.88
+
+  clock clk (fall edge)                                5000.00    5000.00
+  clock network delay (ideal)                             0.00    5000.00
+  clock uncertainty                                    -100.00    4900.00
+  u_gate_en_latched_reg/CLK (DLLx1_ASAP7_75t_R)           0.00    4900.00 f
+  time borrowed from endpoint                             0.00    4900.00
+  data required time                                              4900.00
+  --------------------------------------------------------------------------
+  data required time                                              4900.00
+  data arrival time                                              -1172.88
+  --------------------------------------------------------------------------
+  slack (MET)                                                     3727.12
+
+  Time Borrowing Information
+  --------------------------------------------------------------
+  clk nominal pulse width                              5000.00   
+  library setup time                                     -9.43   
+  --------------------------------------------------------------
+  max time borrow                                      4990.57   
+  actual time borrow                                      0.00   
+  --------------------------------------------------------------
+
+
+  Startpoint: enable (input port clocked by clk)
+  Endpoint: extended_sum_reg_31_
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  input external delay                                 1000.00    1000.00 f
+  enable (in)                                             0.00    1000.00 f
+  U155/Y (HB1xp67_ASAP7_75t_R)                          110.29    1110.29 f
+  U176/Y (NAND2xp33_ASAP7_75t_R)                         77.69    1187.98 r
+  add_x_2_U76/CON (FAx1_ASAP7_75t_R)                     39.60    1227.58 f
+  add_x_2_U75/CON (FAx1_ASAP7_75t_R)                     34.51    1262.09 r
+  add_x_2_U71/CON (FAx1_ASAP7_75t_R)                     30.66    1292.75 f
+  add_x_2_U70/CON (FAx1_ASAP7_75t_R)                     34.51    1327.26 r
+  add_x_2_U66/CON (FAx1_ASAP7_75t_R)                     30.66    1357.92 f
+  add_x_2_U65/CON (FAx1_ASAP7_75t_R)                     34.51    1392.43 r
+  add_x_2_U61/CON (FAx1_ASAP7_75t_R)                     33.46    1425.89 f
+  add_x_2_U60/CON (FAx1_ASAP7_75t_R)                     34.51    1460.40 r
+  add_x_2_U56/CON (FAx1_ASAP7_75t_R)                     30.66    1491.06 f
+  add_x_2_U55/CON (FAx1_ASAP7_75t_R)                     34.51    1525.57 r
+  add_x_2_U51/CON (FAx1_ASAP7_75t_R)                     30.66    1556.23 f
+  add_x_2_U50/CON (FAx1_ASAP7_75t_R)                     34.51    1590.74 r
+  add_x_2_U46/CON (FAx1_ASAP7_75t_R)                     30.66    1621.40 f
+  add_x_2_U45/CON (FAx1_ASAP7_75t_R)                     34.51    1655.91 r
+  add_x_2_U41/CON (FAx1_ASAP7_75t_R)                     30.66    1686.57 f
+  add_x_2_U40/CON (FAx1_ASAP7_75t_R)                     34.51    1721.08 r
+  add_x_2_U36/CON (FAx1_ASAP7_75t_R)                     30.66    1751.74 f
+  add_x_2_U35/CON (FAx1_ASAP7_75t_R)                     34.51    1786.25 r
+  add_x_2_U31/CON (FAx1_ASAP7_75t_R)                     30.66    1816.91 f
+  add_x_2_U30/CON (FAx1_ASAP7_75t_R)                     34.51    1851.43 r
+  add_x_2_U26/CON (FAx1_ASAP7_75t_R)                     30.66    1882.08 f
+  add_x_2_U25/CON (FAx1_ASAP7_75t_R)                     34.51    1916.60 r
+  add_x_2_U21/CON (FAx1_ASAP7_75t_R)                     33.46    1950.06 f
+  add_x_2_U20/CON (FAx1_ASAP7_75t_R)                     34.51    1984.57 r
+  add_x_2_U16/CON (FAx1_ASAP7_75t_R)                     30.66    2015.23 f
+  add_x_2_U15/CON (FAx1_ASAP7_75t_R)                     34.51    2049.74 r
+  add_x_2_U11/CON (FAx1_ASAP7_75t_R)                     30.66    2080.40 f
+  add_x_2_U10/CON (FAx1_ASAP7_75t_R)                     34.51    2114.91 r
+  add_x_2_U6/CON (FAx1_ASAP7_75t_R)                      30.66    2145.57 f
+  add_x_2_U5/CON (FAx1_ASAP7_75t_R)                      34.51    2180.08 r
+  add_x_2_U1/SN (FAx1_ASAP7_75t_R)                       40.62    2220.70 f
+  U241/Y (NAND2xp33_ASAP7_75t_R)                         17.92    2238.61 r
+  U242/Y (OAI21xp33_ASAP7_75t_R)                         20.79    2259.41 f
+  extended_sum_reg_31_/D (ASYNC_DFFHx1_ASAP7_75t_R)       0.00    2259.41 f
+  data arrival time                                               2259.41
+
+  clock clk (rise edge)                               10000.00   10000.00
+  clock network delay (ideal)                             0.00   10000.00
+  clock uncertainty                                    -100.00    9900.00
+  extended_sum_reg_31_/CLK (ASYNC_DFFHx1_ASAP7_75t_R)     0.00    9900.00 r
+  library setup time                                    -14.36    9885.64
+  data required time                                              9885.64
+  --------------------------------------------------------------------------
+  data required time                                              9885.64
+  data arrival time                                              -2259.41
+  --------------------------------------------------------------------------
+  slack (MET)                                                     7626.23
+
+
+  Startpoint: enable (input port clocked by clk)
+  Endpoint: extended_sum_reg_32_
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  input external delay                                 1000.00    1000.00 f
+  enable (in)                                             0.00    1000.00 f
+  U155/Y (HB1xp67_ASAP7_75t_R)                          110.29    1110.29 f
+  U176/Y (NAND2xp33_ASAP7_75t_R)                         77.69    1187.98 r
+  add_x_2_U76/CON (FAx1_ASAP7_75t_R)                     39.60    1227.58 f
+  add_x_2_U75/CON (FAx1_ASAP7_75t_R)                     34.51    1262.09 r
+  add_x_2_U71/CON (FAx1_ASAP7_75t_R)                     30.66    1292.75 f
+  add_x_2_U70/CON (FAx1_ASAP7_75t_R)                     34.51    1327.26 r
+  add_x_2_U66/CON (FAx1_ASAP7_75t_R)                     30.66    1357.92 f
+  add_x_2_U65/CON (FAx1_ASAP7_75t_R)                     34.51    1392.43 r
+  add_x_2_U61/CON (FAx1_ASAP7_75t_R)                     33.46    1425.89 f
+  add_x_2_U60/CON (FAx1_ASAP7_75t_R)                     34.51    1460.40 r
+  add_x_2_U56/CON (FAx1_ASAP7_75t_R)                     30.66    1491.06 f
+  add_x_2_U55/CON (FAx1_ASAP7_75t_R)                     34.51    1525.57 r
+  add_x_2_U51/CON (FAx1_ASAP7_75t_R)                     30.66    1556.23 f
+  add_x_2_U50/CON (FAx1_ASAP7_75t_R)                     34.51    1590.74 r
+  add_x_2_U46/CON (FAx1_ASAP7_75t_R)                     30.66    1621.40 f
+  add_x_2_U45/CON (FAx1_ASAP7_75t_R)                     34.51    1655.91 r
+  add_x_2_U41/CON (FAx1_ASAP7_75t_R)                     30.66    1686.57 f
+  add_x_2_U40/CON (FAx1_ASAP7_75t_R)                     34.51    1721.08 r
+  add_x_2_U36/CON (FAx1_ASAP7_75t_R)                     30.66    1751.74 f
+  add_x_2_U35/CON (FAx1_ASAP7_75t_R)                     34.51    1786.25 r
+  add_x_2_U31/CON (FAx1_ASAP7_75t_R)                     30.66    1816.91 f
+  add_x_2_U30/CON (FAx1_ASAP7_75t_R)                     34.51    1851.43 r
+  add_x_2_U26/CON (FAx1_ASAP7_75t_R)                     30.66    1882.08 f
+  add_x_2_U25/CON (FAx1_ASAP7_75t_R)                     34.51    1916.60 r
+  add_x_2_U21/CON (FAx1_ASAP7_75t_R)                     33.46    1950.06 f
+  add_x_2_U20/CON (FAx1_ASAP7_75t_R)                     34.51    1984.57 r
+  add_x_2_U16/CON (FAx1_ASAP7_75t_R)                     30.66    2015.23 f
+  add_x_2_U15/CON (FAx1_ASAP7_75t_R)                     34.51    2049.74 r
+  add_x_2_U11/CON (FAx1_ASAP7_75t_R)                     30.66    2080.40 f
+  add_x_2_U10/CON (FAx1_ASAP7_75t_R)                     34.51    2114.91 r
+  add_x_2_U6/CON (FAx1_ASAP7_75t_R)                      30.66    2145.57 f
+  add_x_2_U5/CON (FAx1_ASAP7_75t_R)                      34.51    2180.08 r
+  add_x_2_U1/CON (FAx1_ASAP7_75t_R)                      24.06    2204.14 f
+  U245/Y (AND2x2_ASAP7_75t_R)                            25.34    2229.49 f
+  extended_sum_reg_32_/D (ASYNC_DFFHx1_ASAP7_75t_R)       0.00    2229.49 f
+  data arrival time                                               2229.49
+
+  clock clk (rise edge)                               10000.00   10000.00
+  clock network delay (ideal)                             0.00   10000.00
+  clock uncertainty                                    -100.00    9900.00
+  extended_sum_reg_32_/CLK (ASYNC_DFFHx1_ASAP7_75t_R)     0.00    9900.00 r
+  library setup time                                     -9.43    9890.57
+  data required time                                              9890.57
+  --------------------------------------------------------------------------
+  data required time                                              9890.57
+  data arrival time                                              -2229.49
+  --------------------------------------------------------------------------
+  slack (MET)                                                     7661.08
+
+
+  Startpoint: enable (input port clocked by clk)
+  Endpoint: extended_sum_reg_30_
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  input external delay                                 1000.00    1000.00 f
+  enable (in)                                             0.00    1000.00 f
+  U155/Y (HB1xp67_ASAP7_75t_R)                          110.29    1110.29 f
+  U176/Y (NAND2xp33_ASAP7_75t_R)                         77.69    1187.98 r
+  add_x_2_U76/CON (FAx1_ASAP7_75t_R)                     39.60    1227.58 f
+  add_x_2_U75/CON (FAx1_ASAP7_75t_R)                     34.51    1262.09 r
+  add_x_2_U71/CON (FAx1_ASAP7_75t_R)                     30.66    1292.75 f
+  add_x_2_U70/CON (FAx1_ASAP7_75t_R)                     34.51    1327.26 r
+  add_x_2_U66/CON (FAx1_ASAP7_75t_R)                     30.66    1357.92 f
+  add_x_2_U65/CON (FAx1_ASAP7_75t_R)                     34.51    1392.43 r
+  add_x_2_U61/CON (FAx1_ASAP7_75t_R)                     33.46    1425.89 f
+  add_x_2_U60/CON (FAx1_ASAP7_75t_R)                     34.51    1460.40 r
+  add_x_2_U56/CON (FAx1_ASAP7_75t_R)                     30.66    1491.06 f
+  add_x_2_U55/CON (FAx1_ASAP7_75t_R)                     34.51    1525.57 r
+  add_x_2_U51/CON (FAx1_ASAP7_75t_R)                     30.66    1556.23 f
+  add_x_2_U50/CON (FAx1_ASAP7_75t_R)                     34.51    1590.74 r
+  add_x_2_U46/CON (FAx1_ASAP7_75t_R)                     30.66    1621.40 f
+  add_x_2_U45/CON (FAx1_ASAP7_75t_R)                     34.51    1655.91 r
+  add_x_2_U41/CON (FAx1_ASAP7_75t_R)                     30.66    1686.57 f
+  add_x_2_U40/CON (FAx1_ASAP7_75t_R)                     34.51    1721.08 r
+  add_x_2_U36/CON (FAx1_ASAP7_75t_R)                     30.66    1751.74 f
+  add_x_2_U35/CON (FAx1_ASAP7_75t_R)                     34.51    1786.25 r
+  add_x_2_U31/CON (FAx1_ASAP7_75t_R)                     30.66    1816.91 f
+  add_x_2_U30/CON (FAx1_ASAP7_75t_R)                     34.51    1851.43 r
+  add_x_2_U26/CON (FAx1_ASAP7_75t_R)                     30.66    1882.08 f
+  add_x_2_U25/CON (FAx1_ASAP7_75t_R)                     34.51    1916.60 r
+  add_x_2_U21/CON (FAx1_ASAP7_75t_R)                     33.46    1950.06 f
+  add_x_2_U20/CON (FAx1_ASAP7_75t_R)                     34.51    1984.57 r
+  add_x_2_U16/CON (FAx1_ASAP7_75t_R)                     30.66    2015.23 f
+  add_x_2_U15/CON (FAx1_ASAP7_75t_R)                     34.51    2049.74 r
+  add_x_2_U11/CON (FAx1_ASAP7_75t_R)                     30.66    2080.40 f
+  add_x_2_U10/CON (FAx1_ASAP7_75t_R)                     34.51    2114.91 r
+  add_x_2_U6/CON (FAx1_ASAP7_75t_R)                      30.66    2145.57 f
+  add_x_2_U5/CON (FAx1_ASAP7_75t_R)                      34.51    2180.08 r
+  add_x_2_U5/SN (FAx1_ASAP7_75t_R)                       17.18    2197.26 f
+  U240/Y (AOI22xp33_ASAP7_75t_R)                         24.53    2221.79 r
+  extended_sum_reg_30_/D (ASYNC_DFFHx1_ASAP7_75t_R)       0.00    2221.79 r
+  data arrival time                                               2221.79
+
+  clock clk (rise edge)                               10000.00   10000.00
+  clock network delay (ideal)                             0.00   10000.00
+  clock uncertainty                                    -100.00    9900.00
+  extended_sum_reg_30_/CLK (ASYNC_DFFHx1_ASAP7_75t_R)     0.00    9900.00 r
+  library setup time                                    -14.33    9885.67
+  data required time                                              9885.67
+  --------------------------------------------------------------------------
+  data required time                                              9885.67
+  data arrival time                                              -2221.79
+  --------------------------------------------------------------------------
+  slack (MET)                                                     7663.87
+
+
+  Startpoint: enable (input port clocked by clk)
+  Endpoint: extended_sum_reg_29_
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  input external delay                                 1000.00    1000.00 r
+  enable (in)                                             0.00    1000.00 r
+  U155/Y (HB1xp67_ASAP7_75t_R)                          126.67    1126.67 r
+  U175/Y (NAND3xp33_ASAP7_75t_R)                         56.73    1183.40 f
+  add_x_2_U76/CON (FAx1_ASAP7_75t_R)                     42.84    1226.24 r
+  add_x_2_U75/CON (FAx1_ASAP7_75t_R)                     31.56    1257.80 f
+  add_x_2_U71/CON (FAx1_ASAP7_75t_R)                     33.95    1291.75 r
+  add_x_2_U70/CON (FAx1_ASAP7_75t_R)                     30.96    1322.70 f
+  add_x_2_U66/CON (FAx1_ASAP7_75t_R)                     33.95    1356.66 r
+  add_x_2_U65/CON (FAx1_ASAP7_75t_R)                     30.96    1387.61 f
+  add_x_2_U61/CON (FAx1_ASAP7_75t_R)                     37.52    1425.14 r
+  add_x_2_U60/CON (FAx1_ASAP7_75t_R)                     30.96    1456.09 f
+  add_x_2_U56/CON (FAx1_ASAP7_75t_R)                     33.95    1490.05 r
+  add_x_2_U55/CON (FAx1_ASAP7_75t_R)                     30.96    1521.00 f
+  add_x_2_U51/CON (FAx1_ASAP7_75t_R)                     33.95    1554.95 r
+  add_x_2_U50/CON (FAx1_ASAP7_75t_R)                     30.96    1585.91 f
+  add_x_2_U46/CON (FAx1_ASAP7_75t_R)                     33.95    1619.86 r
+  add_x_2_U45/CON (FAx1_ASAP7_75t_R)                     30.96    1650.82 f
+  add_x_2_U41/CON (FAx1_ASAP7_75t_R)                     33.95    1684.77 r
+  add_x_2_U40/CON (FAx1_ASAP7_75t_R)                     30.96    1715.73 f
+  add_x_2_U36/CON (FAx1_ASAP7_75t_R)                     33.95    1749.68 r
+  add_x_2_U35/CON (FAx1_ASAP7_75t_R)                     30.96    1780.63 f
+  add_x_2_U31/CON (FAx1_ASAP7_75t_R)                     33.95    1814.59 r
+  add_x_2_U30/CON (FAx1_ASAP7_75t_R)                     30.96    1845.54 f
+  add_x_2_U26/CON (FAx1_ASAP7_75t_R)                     33.95    1879.50 r
+  add_x_2_U25/CON (FAx1_ASAP7_75t_R)                     30.96    1910.45 f
+  add_x_2_U21/CON (FAx1_ASAP7_75t_R)                     37.52    1947.98 r
+  add_x_2_U20/CON (FAx1_ASAP7_75t_R)                     30.96    1978.93 f
+  add_x_2_U16/CON (FAx1_ASAP7_75t_R)                     33.95    2012.88 r
+  add_x_2_U15/CON (FAx1_ASAP7_75t_R)                     30.96    2043.84 f
+  add_x_2_U11/CON (FAx1_ASAP7_75t_R)                     33.95    2077.79 r
+  add_x_2_U10/CON (FAx1_ASAP7_75t_R)                     30.96    2108.75 f
+  add_x_2_U6/CON (FAx1_ASAP7_75t_R)                      33.95    2142.70 r
+  add_x_2_U6/SN (FAx1_ASAP7_75t_R)                       16.67    2159.37 f
+  U238/Y (NAND2xp33_ASAP7_75t_R)                         17.92    2177.29 r
+  U239/Y (OAI21xp33_ASAP7_75t_R)                         20.79    2198.08 f
+  extended_sum_reg_29_/D (ASYNC_DFFHx1_ASAP7_75t_R)       0.00    2198.08 f
+  data arrival time                                               2198.08
+
+  clock clk (rise edge)                               10000.00   10000.00
+  clock network delay (ideal)                             0.00   10000.00
+  clock uncertainty                                    -100.00    9900.00
+  extended_sum_reg_29_/CLK (ASYNC_DFFHx1_ASAP7_75t_R)     0.00    9900.00 r
+  library setup time                                    -14.36    9885.64
+  data required time                                              9885.64
+  --------------------------------------------------------------------------
+  data required time                                              9885.64
+  data arrival time                                              -2198.08
+  --------------------------------------------------------------------------
+  slack (MET)                                                     7687.56
+
+
+  Startpoint: enable (input port clocked by clk)
+  Endpoint: extended_sum_reg_28_
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  input external delay                                 1000.00    1000.00 f
+  enable (in)                                             0.00    1000.00 f
+  U155/Y (HB1xp67_ASAP7_75t_R)                          110.29    1110.29 f
+  U176/Y (NAND2xp33_ASAP7_75t_R)                         77.69    1187.98 r
+  add_x_2_U76/CON (FAx1_ASAP7_75t_R)                     39.60    1227.58 f
+  add_x_2_U75/CON (FAx1_ASAP7_75t_R)                     34.51    1262.09 r
+  add_x_2_U71/CON (FAx1_ASAP7_75t_R)                     30.66    1292.75 f
+  add_x_2_U70/CON (FAx1_ASAP7_75t_R)                     34.51    1327.26 r
+  add_x_2_U66/CON (FAx1_ASAP7_75t_R)                     30.66    1357.92 f
+  add_x_2_U65/CON (FAx1_ASAP7_75t_R)                     34.51    1392.43 r
+  add_x_2_U61/CON (FAx1_ASAP7_75t_R)                     33.46    1425.89 f
+  add_x_2_U60/CON (FAx1_ASAP7_75t_R)                     34.51    1460.40 r
+  add_x_2_U56/CON (FAx1_ASAP7_75t_R)                     30.66    1491.06 f
+  add_x_2_U55/CON (FAx1_ASAP7_75t_R)                     34.51    1525.57 r
+  add_x_2_U51/CON (FAx1_ASAP7_75t_R)                     30.66    1556.23 f
+  add_x_2_U50/CON (FAx1_ASAP7_75t_R)                     34.51    1590.74 r
+  add_x_2_U46/CON (FAx1_ASAP7_75t_R)                     30.66    1621.40 f
+  add_x_2_U45/CON (FAx1_ASAP7_75t_R)                     34.51    1655.91 r
+  add_x_2_U41/CON (FAx1_ASAP7_75t_R)                     30.66    1686.57 f
+  add_x_2_U40/CON (FAx1_ASAP7_75t_R)                     34.51    1721.08 r
+  add_x_2_U36/CON (FAx1_ASAP7_75t_R)                     30.66    1751.74 f
+  add_x_2_U35/CON (FAx1_ASAP7_75t_R)                     34.51    1786.25 r
+  add_x_2_U31/CON (FAx1_ASAP7_75t_R)                     30.66    1816.91 f
+  add_x_2_U30/CON (FAx1_ASAP7_75t_R)                     34.51    1851.43 r
+  add_x_2_U26/CON (FAx1_ASAP7_75t_R)                     30.66    1882.08 f
+  add_x_2_U25/CON (FAx1_ASAP7_75t_R)                     34.51    1916.60 r
+  add_x_2_U21/CON (FAx1_ASAP7_75t_R)                     33.46    1950.06 f
+  add_x_2_U20/CON (FAx1_ASAP7_75t_R)                     34.51    1984.57 r
+  add_x_2_U16/CON (FAx1_ASAP7_75t_R)                     30.66    2015.23 f
+  add_x_2_U15/CON (FAx1_ASAP7_75t_R)                     34.51    2049.74 r
+  add_x_2_U11/CON (FAx1_ASAP7_75t_R)                     30.66    2080.40 f
+  add_x_2_U10/CON (FAx1_ASAP7_75t_R)                     34.51    2114.91 r
+  add_x_2_U10/SN (FAx1_ASAP7_75t_R)                      17.18    2132.09 f
+  U237/Y (AOI22xp33_ASAP7_75t_R)                         24.53    2156.62 r
+  extended_sum_reg_28_/D (ASYNC_DFFHx1_ASAP7_75t_R)       0.00    2156.62 r
+  data arrival time                                               2156.62
+
+  clock clk (rise edge)                               10000.00   10000.00
+  clock network delay (ideal)                             0.00   10000.00
+  clock uncertainty                                    -100.00    9900.00
+  extended_sum_reg_28_/CLK (ASYNC_DFFHx1_ASAP7_75t_R)     0.00    9900.00 r
+  library setup time                                    -14.33    9885.67
+  data required time                                              9885.67
+  --------------------------------------------------------------------------
+  data required time                                              9885.67
+  data arrival time                                              -2156.62
+  --------------------------------------------------------------------------
+  slack (MET)                                                     7729.04
+
+
+  Startpoint: enable (input port clocked by clk)
+  Endpoint: extended_sum_reg_27_
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  input external delay                                 1000.00    1000.00 r
+  enable (in)                                             0.00    1000.00 r
+  U155/Y (HB1xp67_ASAP7_75t_R)                          126.67    1126.67 r
+  U175/Y (NAND3xp33_ASAP7_75t_R)                         56.73    1183.40 f
+  add_x_2_U76/CON (FAx1_ASAP7_75t_R)                     42.84    1226.24 r
+  add_x_2_U75/CON (FAx1_ASAP7_75t_R)                     31.56    1257.80 f
+  add_x_2_U71/CON (FAx1_ASAP7_75t_R)                     33.95    1291.75 r
+  add_x_2_U70/CON (FAx1_ASAP7_75t_R)                     30.96    1322.70 f
+  add_x_2_U66/CON (FAx1_ASAP7_75t_R)                     33.95    1356.66 r
+  add_x_2_U65/CON (FAx1_ASAP7_75t_R)                     30.96    1387.61 f
+  add_x_2_U61/CON (FAx1_ASAP7_75t_R)                     37.52    1425.14 r
+  add_x_2_U60/CON (FAx1_ASAP7_75t_R)                     30.96    1456.09 f
+  add_x_2_U56/CON (FAx1_ASAP7_75t_R)                     33.95    1490.05 r
+  add_x_2_U55/CON (FAx1_ASAP7_75t_R)                     30.96    1521.00 f
+  add_x_2_U51/CON (FAx1_ASAP7_75t_R)                     33.95    1554.95 r
+  add_x_2_U50/CON (FAx1_ASAP7_75t_R)                     30.96    1585.91 f
+  add_x_2_U46/CON (FAx1_ASAP7_75t_R)                     33.95    1619.86 r
+  add_x_2_U45/CON (FAx1_ASAP7_75t_R)                     30.96    1650.82 f
+  add_x_2_U41/CON (FAx1_ASAP7_75t_R)                     33.95    1684.77 r
+  add_x_2_U40/CON (FAx1_ASAP7_75t_R)                     30.96    1715.73 f
+  add_x_2_U36/CON (FAx1_ASAP7_75t_R)                     33.95    1749.68 r
+  add_x_2_U35/CON (FAx1_ASAP7_75t_R)                     30.96    1780.63 f
+  add_x_2_U31/CON (FAx1_ASAP7_75t_R)                     33.95    1814.59 r
+  add_x_2_U30/CON (FAx1_ASAP7_75t_R)                     30.96    1845.54 f
+  add_x_2_U26/CON (FAx1_ASAP7_75t_R)                     33.95    1879.50 r
+  add_x_2_U25/CON (FAx1_ASAP7_75t_R)                     30.96    1910.45 f
+  add_x_2_U21/CON (FAx1_ASAP7_75t_R)                     37.52    1947.98 r
+  add_x_2_U20/CON (FAx1_ASAP7_75t_R)                     30.96    1978.93 f
+  add_x_2_U16/CON (FAx1_ASAP7_75t_R)                     33.95    2012.88 r
+  add_x_2_U15/CON (FAx1_ASAP7_75t_R)                     30.96    2043.84 f
+  add_x_2_U11/CON (FAx1_ASAP7_75t_R)                     33.95    2077.79 r
+  add_x_2_U11/SN (FAx1_ASAP7_75t_R)                      16.67    2094.46 f
+  U235/Y (NAND2xp33_ASAP7_75t_R)                         17.92    2112.38 r
+  U236/Y (OAI21xp33_ASAP7_75t_R)                         20.79    2133.17 f
+  extended_sum_reg_27_/D (ASYNC_DFFHx1_ASAP7_75t_R)       0.00    2133.17 f
+  data arrival time                                               2133.17
+
+  clock clk (rise edge)                               10000.00   10000.00
+  clock network delay (ideal)                             0.00   10000.00
+  clock uncertainty                                    -100.00    9900.00
+  extended_sum_reg_27_/CLK (ASYNC_DFFHx1_ASAP7_75t_R)     0.00    9900.00 r
+  library setup time                                    -14.36    9885.64
+  data required time                                              9885.64
+  --------------------------------------------------------------------------
+  data required time                                              9885.64
+  data arrival time                                              -2133.17
+  --------------------------------------------------------------------------
+  slack (MET)                                                     7752.46
+
+
+  Startpoint: enable (input port clocked by clk)
+  Endpoint: extended_sum_reg_26_
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  input external delay                                 1000.00    1000.00 f
+  enable (in)                                             0.00    1000.00 f
+  U155/Y (HB1xp67_ASAP7_75t_R)                          110.29    1110.29 f
+  U176/Y (NAND2xp33_ASAP7_75t_R)                         77.69    1187.98 r
+  add_x_2_U76/CON (FAx1_ASAP7_75t_R)                     39.60    1227.58 f
+  add_x_2_U75/CON (FAx1_ASAP7_75t_R)                     34.51    1262.09 r
+  add_x_2_U71/CON (FAx1_ASAP7_75t_R)                     30.66    1292.75 f
+  add_x_2_U70/CON (FAx1_ASAP7_75t_R)                     34.51    1327.26 r
+  add_x_2_U66/CON (FAx1_ASAP7_75t_R)                     30.66    1357.92 f
+  add_x_2_U65/CON (FAx1_ASAP7_75t_R)                     34.51    1392.43 r
+  add_x_2_U61/CON (FAx1_ASAP7_75t_R)                     33.46    1425.89 f
+  add_x_2_U60/CON (FAx1_ASAP7_75t_R)                     34.51    1460.40 r
+  add_x_2_U56/CON (FAx1_ASAP7_75t_R)                     30.66    1491.06 f
+  add_x_2_U55/CON (FAx1_ASAP7_75t_R)                     34.51    1525.57 r
+  add_x_2_U51/CON (FAx1_ASAP7_75t_R)                     30.66    1556.23 f
+  add_x_2_U50/CON (FAx1_ASAP7_75t_R)                     34.51    1590.74 r
+  add_x_2_U46/CON (FAx1_ASAP7_75t_R)                     30.66    1621.40 f
+  add_x_2_U45/CON (FAx1_ASAP7_75t_R)                     34.51    1655.91 r
+  add_x_2_U41/CON (FAx1_ASAP7_75t_R)                     30.66    1686.57 f
+  add_x_2_U40/CON (FAx1_ASAP7_75t_R)                     34.51    1721.08 r
+  add_x_2_U36/CON (FAx1_ASAP7_75t_R)                     30.66    1751.74 f
+  add_x_2_U35/CON (FAx1_ASAP7_75t_R)                     34.51    1786.25 r
+  add_x_2_U31/CON (FAx1_ASAP7_75t_R)                     30.66    1816.91 f
+  add_x_2_U30/CON (FAx1_ASAP7_75t_R)                     34.51    1851.43 r
+  add_x_2_U26/CON (FAx1_ASAP7_75t_R)                     30.66    1882.08 f
+  add_x_2_U25/CON (FAx1_ASAP7_75t_R)                     34.51    1916.60 r
+  add_x_2_U21/CON (FAx1_ASAP7_75t_R)                     33.46    1950.06 f
+  add_x_2_U20/CON (FAx1_ASAP7_75t_R)                     34.51    1984.57 r
+  add_x_2_U16/CON (FAx1_ASAP7_75t_R)                     30.66    2015.23 f
+  add_x_2_U15/CON (FAx1_ASAP7_75t_R)                     34.51    2049.74 r
+  add_x_2_U15/SN (FAx1_ASAP7_75t_R)                      17.18    2066.92 f
+  U234/Y (AOI22xp33_ASAP7_75t_R)                         24.53    2091.45 r
+  extended_sum_reg_26_/D (ASYNC_DFFHx1_ASAP7_75t_R)       0.00    2091.45 r
+  data arrival time                                               2091.45
+
+  clock clk (rise edge)                               10000.00   10000.00
+  clock network delay (ideal)                             0.00   10000.00
+  clock uncertainty                                    -100.00    9900.00
+  extended_sum_reg_26_/CLK (ASYNC_DFFHx1_ASAP7_75t_R)     0.00    9900.00 r
+  library setup time                                    -14.33    9885.67
+  data required time                                              9885.67
+  --------------------------------------------------------------------------
+  data required time                                              9885.67
+  data arrival time                                              -2091.45
+  --------------------------------------------------------------------------
+  slack (MET)                                                     7794.21
+
+
+  Startpoint: enable (input port clocked by clk)
+  Endpoint: extended_sum_reg_25_
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  input external delay                                 1000.00    1000.00 r
+  enable (in)                                             0.00    1000.00 r
+  U155/Y (HB1xp67_ASAP7_75t_R)                          126.67    1126.67 r
+  U175/Y (NAND3xp33_ASAP7_75t_R)                         56.73    1183.40 f
+  add_x_2_U76/CON (FAx1_ASAP7_75t_R)                     42.84    1226.24 r
+  add_x_2_U75/CON (FAx1_ASAP7_75t_R)                     31.56    1257.80 f
+  add_x_2_U71/CON (FAx1_ASAP7_75t_R)                     33.95    1291.75 r
+  add_x_2_U70/CON (FAx1_ASAP7_75t_R)                     30.96    1322.70 f
+  add_x_2_U66/CON (FAx1_ASAP7_75t_R)                     33.95    1356.66 r
+  add_x_2_U65/CON (FAx1_ASAP7_75t_R)                     30.96    1387.61 f
+  add_x_2_U61/CON (FAx1_ASAP7_75t_R)                     37.52    1425.14 r
+  add_x_2_U60/CON (FAx1_ASAP7_75t_R)                     30.96    1456.09 f
+  add_x_2_U56/CON (FAx1_ASAP7_75t_R)                     33.95    1490.05 r
+  add_x_2_U55/CON (FAx1_ASAP7_75t_R)                     30.96    1521.00 f
+  add_x_2_U51/CON (FAx1_ASAP7_75t_R)                     33.95    1554.95 r
+  add_x_2_U50/CON (FAx1_ASAP7_75t_R)                     30.96    1585.91 f
+  add_x_2_U46/CON (FAx1_ASAP7_75t_R)                     33.95    1619.86 r
+  add_x_2_U45/CON (FAx1_ASAP7_75t_R)                     30.96    1650.82 f
+  add_x_2_U41/CON (FAx1_ASAP7_75t_R)                     33.95    1684.77 r
+  add_x_2_U40/CON (FAx1_ASAP7_75t_R)                     30.96    1715.73 f
+  add_x_2_U36/CON (FAx1_ASAP7_75t_R)                     33.95    1749.68 r
+  add_x_2_U35/CON (FAx1_ASAP7_75t_R)                     30.96    1780.63 f
+  add_x_2_U31/CON (FAx1_ASAP7_75t_R)                     33.95    1814.59 r
+  add_x_2_U30/CON (FAx1_ASAP7_75t_R)                     30.96    1845.54 f
+  add_x_2_U26/CON (FAx1_ASAP7_75t_R)                     33.95    1879.50 r
+  add_x_2_U25/CON (FAx1_ASAP7_75t_R)                     30.96    1910.45 f
+  add_x_2_U21/CON (FAx1_ASAP7_75t_R)                     37.52    1947.98 r
+  add_x_2_U20/CON (FAx1_ASAP7_75t_R)                     30.96    1978.93 f
+  add_x_2_U16/CON (FAx1_ASAP7_75t_R)                     33.95    2012.88 r
+  add_x_2_U16/SN (FAx1_ASAP7_75t_R)                      16.67    2029.56 f
+  U232/Y (NAND2xp33_ASAP7_75t_R)                         17.92    2047.47 r
+  U233/Y (OAI21xp33_ASAP7_75t_R)                         20.79    2068.27 f
+  extended_sum_reg_25_/D (ASYNC_DFFHx1_ASAP7_75t_R)       0.00    2068.27 f
+  data arrival time                                               2068.27
+
+  clock clk (rise edge)                               10000.00   10000.00
+  clock network delay (ideal)                             0.00   10000.00
+  clock uncertainty                                    -100.00    9900.00
+  extended_sum_reg_25_/CLK (ASYNC_DFFHx1_ASAP7_75t_R)     0.00    9900.00 r
+  library setup time                                    -14.36    9885.64
+  data required time                                              9885.64
+  --------------------------------------------------------------------------
+  data required time                                              9885.64
+  data arrival time                                              -2068.27
+  --------------------------------------------------------------------------
+  slack (MET)                                                     7817.37
+
+
+  Startpoint: enable (input port clocked by clk)
+  Endpoint: extended_sum_reg_24_
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  input external delay                                 1000.00    1000.00 f
+  enable (in)                                             0.00    1000.00 f
+  U155/Y (HB1xp67_ASAP7_75t_R)                          110.29    1110.29 f
+  U176/Y (NAND2xp33_ASAP7_75t_R)                         77.69    1187.98 r
+  add_x_2_U76/CON (FAx1_ASAP7_75t_R)                     39.60    1227.58 f
+  add_x_2_U75/CON (FAx1_ASAP7_75t_R)                     34.51    1262.09 r
+  add_x_2_U71/CON (FAx1_ASAP7_75t_R)                     30.66    1292.75 f
+  add_x_2_U70/CON (FAx1_ASAP7_75t_R)                     34.51    1327.26 r
+  add_x_2_U66/CON (FAx1_ASAP7_75t_R)                     30.66    1357.92 f
+  add_x_2_U65/CON (FAx1_ASAP7_75t_R)                     34.51    1392.43 r
+  add_x_2_U61/CON (FAx1_ASAP7_75t_R)                     33.46    1425.89 f
+  add_x_2_U60/CON (FAx1_ASAP7_75t_R)                     34.51    1460.40 r
+  add_x_2_U56/CON (FAx1_ASAP7_75t_R)                     30.66    1491.06 f
+  add_x_2_U55/CON (FAx1_ASAP7_75t_R)                     34.51    1525.57 r
+  add_x_2_U51/CON (FAx1_ASAP7_75t_R)                     30.66    1556.23 f
+  add_x_2_U50/CON (FAx1_ASAP7_75t_R)                     34.51    1590.74 r
+  add_x_2_U46/CON (FAx1_ASAP7_75t_R)                     30.66    1621.40 f
+  add_x_2_U45/CON (FAx1_ASAP7_75t_R)                     34.51    1655.91 r
+  add_x_2_U41/CON (FAx1_ASAP7_75t_R)                     30.66    1686.57 f
+  add_x_2_U40/CON (FAx1_ASAP7_75t_R)                     34.51    1721.08 r
+  add_x_2_U36/CON (FAx1_ASAP7_75t_R)                     30.66    1751.74 f
+  add_x_2_U35/CON (FAx1_ASAP7_75t_R)                     34.51    1786.25 r
+  add_x_2_U31/CON (FAx1_ASAP7_75t_R)                     30.66    1816.91 f
+  add_x_2_U30/CON (FAx1_ASAP7_75t_R)                     34.51    1851.43 r
+  add_x_2_U26/CON (FAx1_ASAP7_75t_R)                     30.66    1882.08 f
+  add_x_2_U25/CON (FAx1_ASAP7_75t_R)                     34.51    1916.60 r
+  add_x_2_U21/CON (FAx1_ASAP7_75t_R)                     33.46    1950.06 f
+  add_x_2_U20/CON (FAx1_ASAP7_75t_R)                     34.51    1984.57 r
+  add_x_2_U20/SN (FAx1_ASAP7_75t_R)                      17.18    2001.75 f
+  U231/Y (AOI22xp33_ASAP7_75t_R)                         24.53    2026.28 r
+  extended_sum_reg_24_/D (ASYNC_DFFHx1_ASAP7_75t_R)       0.00    2026.28 r
+  data arrival time                                               2026.28
+
+  clock clk (rise edge)                               10000.00   10000.00
+  clock network delay (ideal)                             0.00   10000.00
+  clock uncertainty                                    -100.00    9900.00
+  extended_sum_reg_24_/CLK (ASYNC_DFFHx1_ASAP7_75t_R)     0.00    9900.00 r
+  library setup time                                    -14.33    9885.67
+  data required time                                              9885.67
+  --------------------------------------------------------------------------
+  data required time                                              9885.67
+  data arrival time                                              -2026.28
+  --------------------------------------------------------------------------
+  slack (MET)                                                     7859.38
+
+
+1

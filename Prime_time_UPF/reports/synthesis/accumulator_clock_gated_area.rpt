@@ -1,0 +1,47 @@
+ 
+****************************************
+Report : area
+Design : accumulator_clock_gated
+Version: W-2024.09-SP3
+Date   : Tue Sep 22 15:24:45 2026
+****************************************
+
+Library(s) Used:
+
+    asap7sc7p5t_SIMPLE_RVT_TT_08302018 (File: /home/UFAD/deepesh.kaira/Prime_time_UPF/lib/asap7_db/asap7sc7p5t_SIMPLE_RVT_TT_08302018.db)
+    asap7sc7p5t_INVBUF_RVT_TT_08302018 (File: /home/UFAD/deepesh.kaira/Prime_time_UPF/lib/asap7_db/asap7sc7p5t_INVBUF_RVT_TT_08302018.db)
+    asap7sc7p5t_OA_RVT_TT_08302018 (File: /home/UFAD/deepesh.kaira/Prime_time_UPF/lib/asap7_db/asap7sc7p5t_OA_RVT_TT_08302018.db)
+    asap7sc7p5t_AO_RVT_TT_08302018 (File: /home/UFAD/deepesh.kaira/Prime_time_UPF/lib/asap7_db/asap7sc7p5t_AO_RVT_TT_08302018.db)
+    asap7sc7p5t_SEQ_RVT_TT_08302018 (File: /home/UFAD/deepesh.kaira/Prime_time_UPF/lib/asap7_db/asap7sc7p5t_SEQ_RVT_TT_08302018.db)
+
+Number of ports:                           68
+Number of nets:                           255
+Number of cells:                          189
+Number of combinational cells:            155
+Number of sequential cells:                34
+Number of macros/black boxes:               0
+Number of buf/inv:                         39
+Number of references:                      15
+
+Combinational area:                226.748158
+Buf/Inv area:                       27.760320
+Noncombinational area:             203.653439
+Macro/Black Box area:                0.000000
+Net Interconnect area:      undefined  (No wire load specified)
+
+Total cell area:                   430.401597
+Total area:                 undefined
+
+Hierarchical area distribution
+------------------------------
+
+                                  Global cell area          Local cell area
+                                  ------------------  --------------------------- 
+Hierarchical cell                 Absolute   Percent  Combi-    Noncombi-  Black-
+                                  Total      Total    national  national   boxes   Design
+--------------------------------  ---------  -------  --------  ---------  ------  ---------
+accumulator_clock_gated            430.4016    100.0  226.7482   203.6534  0.0000  accumulator_clock_gated
+--------------------------------  ---------  -------  --------  ---------  ------  ---------
+Total                                                 226.7482   203.6534  0.0000
+
+1

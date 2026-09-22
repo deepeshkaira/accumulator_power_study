@@ -1,0 +1,54 @@
+****************************************
+Report : Averaged Power
+	-verbose
+Design : accumulator_clock_gated
+Version: W-2024.09-SP5-5
+Date   : Tue Sep 22 15:29:54 2026
+****************************************
+
+Library(s) Used:
+
+    asap7sc7p5t_AO_RVT_TT_08302018 (File: /home/UFAD/deepesh.kaira/Prime_time_UPF/lib/asap7_db/asap7sc7p5t_AO_RVT_TT_08302018.db)
+    asap7sc7p5t_INVBUF_RVT_TT_08302018 (File: /home/UFAD/deepesh.kaira/Prime_time_UPF/lib/asap7_db/asap7sc7p5t_INVBUF_RVT_TT_08302018.db)
+    asap7sc7p5t_OA_RVT_TT_08302018 (File: /home/UFAD/deepesh.kaira/Prime_time_UPF/lib/asap7_db/asap7sc7p5t_OA_RVT_TT_08302018.db)
+    asap7sc7p5t_SEQ_RVT_TT_08302018 (File: /home/UFAD/deepesh.kaira/Prime_time_UPF/lib/asap7_db/asap7sc7p5t_SEQ_RVT_TT_08302018.db)
+    asap7sc7p5t_SIMPLE_RVT_TT_08302018 (File: /home/UFAD/deepesh.kaira/Prime_time_UPF/lib/asap7_db/asap7sc7p5t_SIMPLE_RVT_TT_08302018.db)
+
+
+Operating Conditions: PVT_0P7V_25C   Library: asap7sc7p5t_AO_RVT_TT_08302018
+Wire Load Model Mode: top
+
+<no wire load model is set>
+
+Power-specific unit information :
+    Voltage Units = 1 V
+    Capacitance Units = 0.001 pf
+    Time Units = 0.001 ns
+    Dynamic Power Units = 1 W
+    Leakage Power Units = 1 W
+
+
+
+  Attributes
+  ----------
+      i  -  Including register clock pin internal power
+      u  -  User defined power group
+
+                        Internal  Switching  Leakage    Total
+Power Group             Power     Power      Power      Power   (     %)  Attrs
+--------------------------------------------------------------------------------
+clock_network           2.205e-06 4.477e-07 4.610e-11 2.653e-06 (31.34%)  i
+register                1.188e-06 2.083e-07 1.039e-08 1.407e-06 (16.62%)  
+combinational           1.688e-06 2.704e-06 1.268e-08 4.405e-06 (52.04%)  
+sequential                 0.0000    0.0000    0.0000    0.0000 ( 0.00%)  
+memory                     0.0000    0.0000    0.0000    0.0000 ( 0.00%)  
+io_pad                     0.0000    0.0000    0.0000    0.0000 ( 0.00%)  
+black_box                  0.0000    0.0000    0.0000    0.0000 ( 0.00%)  
+
+  Net Switching Power  = 3.360e-06   (39.70%)
+  Cell Internal Power  = 5.082e-06   (60.03%)
+  Cell Leakage Power   = 2.312e-08   ( 0.27%)
+                         ---------
+Total Power            = 8.465e-06  (100.00%)
+
+1

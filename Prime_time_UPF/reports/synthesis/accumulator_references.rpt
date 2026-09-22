@@ -1,0 +1,60 @@
+ 
+****************************************
+Report : reference
+Design : accumulator
+Version: W-2024.09-SP3
+Date   : Thu Sep 17 20:52:33 2026
+****************************************
+
+Attributes:
+    b - black box (unknown)
+   bo - allows boundary optimization
+    d - dont_touch
+   mo - map_only
+    h - hierarchical
+    n - noncombinational
+    r - removable
+    s - synthetic operator
+    u - contains unmapped logic
+
+Reference          Library       Unit Area   Count    Total Area   Attributes
+-----------------------------------------------------------------------------
+A2O1A1Ixp33_ASAP7_75t_R
+                   asap7sc7p5t_AO_RVT_TT_08302018
+                                  1.632960       1      1.632960  
+AND2x2_ASAP7_75t_R asap7sc7p5t_SIMPLE_RVT_TT_08302018
+                                  1.399680       1      1.399680  
+AOI22xp33_ASAP7_75t_R
+                   asap7sc7p5t_AO_RVT_TT_08302018
+                                  1.399680      15     20.995200  
+ASYNC_DFFHx1_ASAP7_75t_R
+                   asap7sc7p5t_SEQ_RVT_TT_08302018
+                                  6.065280      33    200.154239  n
+FAx1_ASAP7_75t_R   asap7sc7p5t_SIMPLE_RVT_TT_08302018
+                                  3.265920      31    101.243518  r
+HB1xp67_ASAP7_75t_R
+                   asap7sc7p5t_INVBUF_RVT_TT_08302018
+                                  0.933120       1      0.933120  
+INVx1_ASAP7_75t_R  asap7sc7p5t_INVBUF_RVT_TT_08302018
+                                  0.699840       1      0.699840  
+INVxp33_ASAP7_75t_R
+                   asap7sc7p5t_INVBUF_RVT_TT_08302018
+                                  0.699840      37     25.894080  
+INVxp67_ASAP7_75t_R
+                   asap7sc7p5t_INVBUF_RVT_TT_08302018
+                                  0.699840      13      9.097920  
+NAND2xp33_ASAP7_75t_R
+                   asap7sc7p5t_SIMPLE_RVT_TT_08302018
+                                  0.933120      17     15.863040  
+NAND3xp33_ASAP7_75t_R
+                   asap7sc7p5t_SIMPLE_RVT_TT_08302018
+                                  1.166400       1      1.166400  
+OAI21xp33_ASAP7_75t_R
+                   asap7sc7p5t_OA_RVT_TT_08302018
+                                  1.166400      16     18.662399  
+TIELOx1_ASAP7_75t_R
+                   asap7sc7p5t_SIMPLE_RVT_TT_08302018
+                                  0.699840       1      0.699840  
+-----------------------------------------------------------------------------
+Total 13 references                                   398.442237
+1

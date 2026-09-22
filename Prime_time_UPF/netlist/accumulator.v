@@ -1,0 +1,269 @@
+/////////////////////////////////////////////////////////////
+// Created by: Synopsys DC Ultra(TM) in wire load mode
+// Version   : W-2024.09-SP3
+// Date      : Thu Sep 17 20:52:34 2026
+/////////////////////////////////////////////////////////////
+
+
+module accumulator ( clk, rst_n, enable, data_in, acc_out, overflow );
+  input [31:0] data_in;
+  output [31:0] acc_out;
+  input clk, rst_n, enable;
+  output overflow;
+  wire   N4, n33, n34, n35, n36, n37, n38, n39, n40, n41, n42, n43, n44, n45,
+         n46, n47, n48, n49, n50, n51, n52, n53, n54, n55, n56, n57, n58, n59,
+         n60, n61, n62, n63, n64, n65, n66, n67, n68, n69, n70, n71, n72, n73,
+         n74, n75, n76, n77, n78, n79, n80, n81, n82, n83, n84, n85, n86, n87,
+         n88, n89, n90, n91, n92, n93, n94, n95, n96, n97, n98, add_x_1_n79,
+         add_x_1_n78, add_x_1_n77, add_x_1_n76, add_x_1_n75, add_x_1_n74,
+         add_x_1_n73, add_x_1_n72, add_x_1_n71, add_x_1_n70, add_x_1_n69,
+         add_x_1_n68, add_x_1_n67, add_x_1_n66, add_x_1_n65, add_x_1_n64,
+         add_x_1_n63, add_x_1_n62, add_x_1_n61, add_x_1_n60, add_x_1_n59,
+         add_x_1_n58, add_x_1_n57, add_x_1_n56, add_x_1_n55, add_x_1_n54,
+         add_x_1_n53, add_x_1_n52, add_x_1_n51, add_x_1_n50, add_x_1_n49,
+         add_x_1_n48, add_x_1_n47, add_x_1_n46, add_x_1_n45, add_x_1_n44,
+         add_x_1_n43, add_x_1_n42, add_x_1_n41, add_x_1_n40, add_x_1_n39,
+         add_x_1_n38, add_x_1_n37, add_x_1_n36, add_x_1_n35, add_x_1_n34,
+         add_x_1_n32, add_x_1_n30, add_x_1_n28, add_x_1_n26, add_x_1_n24,
+         add_x_1_n22, add_x_1_n20, add_x_1_n18, add_x_1_n16, add_x_1_n14,
+         add_x_1_n12, add_x_1_n10, add_x_1_n8, add_x_1_n6, add_x_1_n4,
+         add_x_1_n2, n100, n101, n102, n103, n104, n105, n106, n107, n108,
+         n109, n110, n111, n112, n113, n114, n115, n116, n117, n118, n119;
+  wire   [32:1] extended_sum;
+
+  ASYNC_DFFHx1_ASAP7_75t_R overflow_reg ( .D(N4), .CLK(clk), .RESET(n34), 
+        .SET(n100), .QN(n98) );
+  ASYNC_DFFHx1_ASAP7_75t_R acc_out_reg_31_ ( .D(n97), .CLK(clk), .RESET(n34), 
+        .SET(n100), .QN(n96) );
+  ASYNC_DFFHx1_ASAP7_75t_R acc_out_reg_30_ ( .D(n95), .CLK(clk), .RESET(n34), 
+        .SET(n100), .QN(n94) );
+  ASYNC_DFFHx1_ASAP7_75t_R acc_out_reg_29_ ( .D(n93), .CLK(clk), .RESET(n34), 
+        .SET(n100), .QN(n92) );
+  ASYNC_DFFHx1_ASAP7_75t_R acc_out_reg_28_ ( .D(n91), .CLK(clk), .RESET(n34), 
+        .SET(n100), .QN(n90) );
+  ASYNC_DFFHx1_ASAP7_75t_R acc_out_reg_27_ ( .D(n89), .CLK(clk), .RESET(n34), 
+        .SET(n100), .QN(n88) );
+  ASYNC_DFFHx1_ASAP7_75t_R acc_out_reg_26_ ( .D(n87), .CLK(clk), .RESET(n34), 
+        .SET(n100), .QN(n86) );
+  ASYNC_DFFHx1_ASAP7_75t_R acc_out_reg_25_ ( .D(n85), .CLK(clk), .RESET(n34), 
+        .SET(n100), .QN(n84) );
+  ASYNC_DFFHx1_ASAP7_75t_R acc_out_reg_24_ ( .D(n83), .CLK(clk), .RESET(n34), 
+        .SET(n100), .QN(n82) );
+  ASYNC_DFFHx1_ASAP7_75t_R acc_out_reg_23_ ( .D(n81), .CLK(clk), .RESET(n34), 
+        .SET(n100), .QN(n80) );
+  ASYNC_DFFHx1_ASAP7_75t_R acc_out_reg_22_ ( .D(n79), .CLK(clk), .RESET(n34), 
+        .SET(n100), .QN(n78) );
+  ASYNC_DFFHx1_ASAP7_75t_R acc_out_reg_21_ ( .D(n77), .CLK(clk), .RESET(n34), 
+        .SET(n100), .QN(n76) );
+  ASYNC_DFFHx1_ASAP7_75t_R acc_out_reg_20_ ( .D(n75), .CLK(clk), .RESET(n34), 
+        .SET(n100), .QN(n74) );
+  ASYNC_DFFHx1_ASAP7_75t_R acc_out_reg_19_ ( .D(n73), .CLK(clk), .RESET(n34), 
+        .SET(n100), .QN(n72) );
+  ASYNC_DFFHx1_ASAP7_75t_R acc_out_reg_18_ ( .D(n71), .CLK(clk), .RESET(n34), 
+        .SET(n100), .QN(n70) );
+  ASYNC_DFFHx1_ASAP7_75t_R acc_out_reg_17_ ( .D(n69), .CLK(clk), .RESET(n34), 
+        .SET(n100), .QN(n68) );
+  ASYNC_DFFHx1_ASAP7_75t_R acc_out_reg_16_ ( .D(n67), .CLK(clk), .RESET(n34), 
+        .SET(n100), .QN(n66) );
+  ASYNC_DFFHx1_ASAP7_75t_R acc_out_reg_15_ ( .D(n65), .CLK(clk), .RESET(n34), 
+        .SET(n100), .QN(n64) );
+  ASYNC_DFFHx1_ASAP7_75t_R acc_out_reg_14_ ( .D(n63), .CLK(clk), .RESET(n34), 
+        .SET(n100), .QN(n62) );
+  ASYNC_DFFHx1_ASAP7_75t_R acc_out_reg_13_ ( .D(n61), .CLK(clk), .RESET(n34), 
+        .SET(n100), .QN(n60) );
+  ASYNC_DFFHx1_ASAP7_75t_R acc_out_reg_12_ ( .D(n59), .CLK(clk), .RESET(n34), 
+        .SET(n100), .QN(n58) );
+  ASYNC_DFFHx1_ASAP7_75t_R acc_out_reg_11_ ( .D(n57), .CLK(clk), .RESET(n34), 
+        .SET(n100), .QN(n56) );
+  ASYNC_DFFHx1_ASAP7_75t_R acc_out_reg_10_ ( .D(n55), .CLK(clk), .RESET(n34), 
+        .SET(n100), .QN(n54) );
+  ASYNC_DFFHx1_ASAP7_75t_R acc_out_reg_9_ ( .D(n53), .CLK(clk), .RESET(n34), 
+        .SET(n100), .QN(n52) );
+  ASYNC_DFFHx1_ASAP7_75t_R acc_out_reg_8_ ( .D(n51), .CLK(clk), .RESET(n34), 
+        .SET(n100), .QN(n50) );
+  ASYNC_DFFHx1_ASAP7_75t_R acc_out_reg_7_ ( .D(n49), .CLK(clk), .RESET(n34), 
+        .SET(n100), .QN(n48) );
+  ASYNC_DFFHx1_ASAP7_75t_R acc_out_reg_6_ ( .D(n47), .CLK(clk), .RESET(n34), 
+        .SET(n100), .QN(n46) );
+  ASYNC_DFFHx1_ASAP7_75t_R acc_out_reg_5_ ( .D(n45), .CLK(clk), .RESET(n34), 
+        .SET(n100), .QN(n44) );
+  ASYNC_DFFHx1_ASAP7_75t_R acc_out_reg_4_ ( .D(n43), .CLK(clk), .RESET(n34), 
+        .SET(n100), .QN(n42) );
+  ASYNC_DFFHx1_ASAP7_75t_R acc_out_reg_3_ ( .D(n41), .CLK(clk), .RESET(n34), 
+        .SET(n100), .QN(n40) );
+  ASYNC_DFFHx1_ASAP7_75t_R acc_out_reg_2_ ( .D(n39), .CLK(clk), .RESET(n34), 
+        .SET(n100), .QN(n38) );
+  ASYNC_DFFHx1_ASAP7_75t_R acc_out_reg_1_ ( .D(n37), .CLK(clk), .RESET(n34), 
+        .SET(n100), .QN(n36) );
+  ASYNC_DFFHx1_ASAP7_75t_R acc_out_reg_0_ ( .D(n35), .CLK(clk), .RESET(n34), 
+        .SET(n100), .QN(n33) );
+  FAx1_ASAP7_75t_R add_x_1_U76 ( .A(n36), .B(add_x_1_n32), .CI(add_x_1_n64), 
+        .CON(add_x_1_n63), .SN(extended_sum[1]) );
+  FAx1_ASAP7_75t_R add_x_1_U75 ( .A(acc_out[2]), .B(data_in[2]), .CI(
+        add_x_1_n63), .CON(add_x_1_n62), .SN(add_x_1_n79) );
+  FAx1_ASAP7_75t_R add_x_1_U71 ( .A(n40), .B(add_x_1_n30), .CI(add_x_1_n62), 
+        .CON(add_x_1_n61), .SN(extended_sum[3]) );
+  FAx1_ASAP7_75t_R add_x_1_U70 ( .A(acc_out[4]), .B(data_in[4]), .CI(
+        add_x_1_n61), .CON(add_x_1_n60), .SN(add_x_1_n78) );
+  FAx1_ASAP7_75t_R add_x_1_U66 ( .A(n44), .B(add_x_1_n28), .CI(add_x_1_n60), 
+        .CON(add_x_1_n59), .SN(extended_sum[5]) );
+  FAx1_ASAP7_75t_R add_x_1_U65 ( .A(acc_out[6]), .B(data_in[6]), .CI(
+        add_x_1_n59), .CON(add_x_1_n58), .SN(add_x_1_n77) );
+  FAx1_ASAP7_75t_R add_x_1_U61 ( .A(n48), .B(add_x_1_n26), .CI(add_x_1_n58), 
+        .CON(add_x_1_n57), .SN(extended_sum[7]) );
+  FAx1_ASAP7_75t_R add_x_1_U60 ( .A(acc_out[8]), .B(data_in[8]), .CI(
+        add_x_1_n57), .CON(add_x_1_n56), .SN(add_x_1_n76) );
+  FAx1_ASAP7_75t_R add_x_1_U56 ( .A(n52), .B(add_x_1_n24), .CI(add_x_1_n56), 
+        .CON(add_x_1_n55), .SN(extended_sum[9]) );
+  FAx1_ASAP7_75t_R add_x_1_U55 ( .A(acc_out[10]), .B(data_in[10]), .CI(
+        add_x_1_n55), .CON(add_x_1_n54), .SN(add_x_1_n75) );
+  FAx1_ASAP7_75t_R add_x_1_U51 ( .A(n56), .B(add_x_1_n22), .CI(add_x_1_n54), 
+        .CON(add_x_1_n53), .SN(extended_sum[11]) );
+  FAx1_ASAP7_75t_R add_x_1_U50 ( .A(acc_out[12]), .B(data_in[12]), .CI(
+        add_x_1_n53), .CON(add_x_1_n52), .SN(add_x_1_n74) );
+  FAx1_ASAP7_75t_R add_x_1_U46 ( .A(n60), .B(add_x_1_n20), .CI(add_x_1_n52), 
+        .CON(add_x_1_n51), .SN(extended_sum[13]) );
+  FAx1_ASAP7_75t_R add_x_1_U45 ( .A(acc_out[14]), .B(data_in[14]), .CI(
+        add_x_1_n51), .CON(add_x_1_n50), .SN(add_x_1_n73) );
+  FAx1_ASAP7_75t_R add_x_1_U41 ( .A(n64), .B(add_x_1_n18), .CI(add_x_1_n50), 
+        .CON(add_x_1_n49), .SN(extended_sum[15]) );
+  FAx1_ASAP7_75t_R add_x_1_U40 ( .A(acc_out[16]), .B(data_in[16]), .CI(
+        add_x_1_n49), .CON(add_x_1_n48), .SN(add_x_1_n72) );
+  FAx1_ASAP7_75t_R add_x_1_U36 ( .A(n68), .B(add_x_1_n16), .CI(add_x_1_n48), 
+        .CON(add_x_1_n47), .SN(extended_sum[17]) );
+  FAx1_ASAP7_75t_R add_x_1_U35 ( .A(acc_out[18]), .B(data_in[18]), .CI(
+        add_x_1_n47), .CON(add_x_1_n46), .SN(add_x_1_n71) );
+  FAx1_ASAP7_75t_R add_x_1_U31 ( .A(n72), .B(add_x_1_n14), .CI(add_x_1_n46), 
+        .CON(add_x_1_n45), .SN(extended_sum[19]) );
+  FAx1_ASAP7_75t_R add_x_1_U30 ( .A(acc_out[20]), .B(data_in[20]), .CI(
+        add_x_1_n45), .CON(add_x_1_n44), .SN(add_x_1_n70) );
+  FAx1_ASAP7_75t_R add_x_1_U26 ( .A(n76), .B(add_x_1_n12), .CI(add_x_1_n44), 
+        .CON(add_x_1_n43), .SN(extended_sum[21]) );
+  FAx1_ASAP7_75t_R add_x_1_U25 ( .A(acc_out[22]), .B(data_in[22]), .CI(
+        add_x_1_n43), .CON(add_x_1_n42), .SN(add_x_1_n69) );
+  FAx1_ASAP7_75t_R add_x_1_U21 ( .A(n80), .B(add_x_1_n10), .CI(add_x_1_n42), 
+        .CON(add_x_1_n41), .SN(extended_sum[23]) );
+  FAx1_ASAP7_75t_R add_x_1_U20 ( .A(acc_out[24]), .B(data_in[24]), .CI(
+        add_x_1_n41), .CON(add_x_1_n40), .SN(add_x_1_n68) );
+  FAx1_ASAP7_75t_R add_x_1_U16 ( .A(n84), .B(add_x_1_n8), .CI(add_x_1_n40), 
+        .CON(add_x_1_n39), .SN(extended_sum[25]) );
+  FAx1_ASAP7_75t_R add_x_1_U15 ( .A(acc_out[26]), .B(data_in[26]), .CI(
+        add_x_1_n39), .CON(add_x_1_n38), .SN(add_x_1_n67) );
+  FAx1_ASAP7_75t_R add_x_1_U11 ( .A(n88), .B(add_x_1_n6), .CI(add_x_1_n38), 
+        .CON(add_x_1_n37), .SN(extended_sum[27]) );
+  FAx1_ASAP7_75t_R add_x_1_U10 ( .A(acc_out[28]), .B(data_in[28]), .CI(
+        add_x_1_n37), .CON(add_x_1_n36), .SN(add_x_1_n66) );
+  FAx1_ASAP7_75t_R add_x_1_U6 ( .A(n92), .B(add_x_1_n4), .CI(add_x_1_n36), 
+        .CON(add_x_1_n35), .SN(extended_sum[29]) );
+  FAx1_ASAP7_75t_R add_x_1_U5 ( .A(acc_out[30]), .B(data_in[30]), .CI(
+        add_x_1_n35), .CON(add_x_1_n34), .SN(add_x_1_n65) );
+  FAx1_ASAP7_75t_R add_x_1_U1 ( .A(n96), .B(add_x_1_n2), .CI(add_x_1_n34), 
+        .CON(extended_sum[32]), .SN(extended_sum[31]) );
+  INVxp33_ASAP7_75t_R U103 ( .A(n33), .Y(acc_out[0]) );
+  INVxp33_ASAP7_75t_R U104 ( .A(n46), .Y(acc_out[6]) );
+  INVxp33_ASAP7_75t_R U105 ( .A(n74), .Y(acc_out[20]) );
+  INVxp67_ASAP7_75t_R U106 ( .A(n38), .Y(acc_out[2]) );
+  INVxp67_ASAP7_75t_R U107 ( .A(n70), .Y(acc_out[18]) );
+  INVxp67_ASAP7_75t_R U108 ( .A(n54), .Y(acc_out[10]) );
+  INVxp67_ASAP7_75t_R U109 ( .A(n66), .Y(acc_out[16]) );
+  INVxp67_ASAP7_75t_R U110 ( .A(n58), .Y(acc_out[12]) );
+  INVxp67_ASAP7_75t_R U111 ( .A(n82), .Y(acc_out[24]) );
+  INVxp67_ASAP7_75t_R U112 ( .A(n42), .Y(acc_out[4]) );
+  INVxp67_ASAP7_75t_R U113 ( .A(n62), .Y(acc_out[14]) );
+  INVxp67_ASAP7_75t_R U114 ( .A(n50), .Y(acc_out[8]) );
+  INVxp67_ASAP7_75t_R U115 ( .A(n86), .Y(acc_out[26]) );
+  INVxp67_ASAP7_75t_R U116 ( .A(n90), .Y(acc_out[28]) );
+  INVxp67_ASAP7_75t_R U117 ( .A(n94), .Y(acc_out[30]) );
+  INVxp67_ASAP7_75t_R U118 ( .A(n78), .Y(acc_out[22]) );
+  HB1xp67_ASAP7_75t_R U119 ( .A(enable), .Y(n101) );
+  INVx1_ASAP7_75t_R U120 ( .A(rst_n), .Y(n100) );
+  INVxp33_ASAP7_75t_R U121 ( .A(enable), .Y(n117) );
+  TIELOx1_ASAP7_75t_R U122 ( .L(n34) );
+  INVxp33_ASAP7_75t_R U123 ( .A(n98), .Y(overflow) );
+  INVxp33_ASAP7_75t_R U124 ( .A(n92), .Y(acc_out[29]) );
+  INVxp33_ASAP7_75t_R U125 ( .A(n48), .Y(acc_out[7]) );
+  INVxp33_ASAP7_75t_R U126 ( .A(n96), .Y(acc_out[31]) );
+  INVxp33_ASAP7_75t_R U127 ( .A(n44), .Y(acc_out[5]) );
+  INVxp33_ASAP7_75t_R U128 ( .A(n84), .Y(acc_out[25]) );
+  INVxp33_ASAP7_75t_R U129 ( .A(n36), .Y(acc_out[1]) );
+  INVxp33_ASAP7_75t_R U130 ( .A(n56), .Y(acc_out[11]) );
+  INVxp33_ASAP7_75t_R U131 ( .A(n80), .Y(acc_out[23]) );
+  INVxp33_ASAP7_75t_R U132 ( .A(n60), .Y(acc_out[13]) );
+  INVxp33_ASAP7_75t_R U133 ( .A(n64), .Y(acc_out[15]) );
+  INVxp33_ASAP7_75t_R U134 ( .A(n72), .Y(acc_out[19]) );
+  INVxp33_ASAP7_75t_R U135 ( .A(n68), .Y(acc_out[17]) );
+  INVxp33_ASAP7_75t_R U136 ( .A(n88), .Y(acc_out[27]) );
+  INVxp33_ASAP7_75t_R U137 ( .A(n76), .Y(acc_out[21]) );
+  INVxp33_ASAP7_75t_R U138 ( .A(n52), .Y(acc_out[9]) );
+  INVxp33_ASAP7_75t_R U139 ( .A(n40), .Y(acc_out[3]) );
+  NAND2xp33_ASAP7_75t_R U140 ( .A(data_in[0]), .B(acc_out[0]), .Y(add_x_1_n64)
+         );
+  INVxp33_ASAP7_75t_R U141 ( .A(data_in[1]), .Y(add_x_1_n32) );
+  INVxp33_ASAP7_75t_R U142 ( .A(data_in[3]), .Y(add_x_1_n30) );
+  INVxp33_ASAP7_75t_R U143 ( .A(data_in[5]), .Y(add_x_1_n28) );
+  INVxp33_ASAP7_75t_R U144 ( .A(data_in[7]), .Y(add_x_1_n26) );
+  INVxp33_ASAP7_75t_R U145 ( .A(data_in[9]), .Y(add_x_1_n24) );
+  INVxp33_ASAP7_75t_R U146 ( .A(data_in[11]), .Y(add_x_1_n22) );
+  INVxp33_ASAP7_75t_R U147 ( .A(data_in[13]), .Y(add_x_1_n20) );
+  INVxp33_ASAP7_75t_R U148 ( .A(data_in[15]), .Y(add_x_1_n18) );
+  INVxp33_ASAP7_75t_R U149 ( .A(data_in[17]), .Y(add_x_1_n16) );
+  INVxp33_ASAP7_75t_R U150 ( .A(data_in[19]), .Y(add_x_1_n14) );
+  INVxp33_ASAP7_75t_R U151 ( .A(data_in[21]), .Y(add_x_1_n12) );
+  INVxp33_ASAP7_75t_R U152 ( .A(data_in[23]), .Y(add_x_1_n10) );
+  INVxp33_ASAP7_75t_R U153 ( .A(data_in[25]), .Y(add_x_1_n8) );
+  INVxp33_ASAP7_75t_R U154 ( .A(data_in[27]), .Y(add_x_1_n6) );
+  INVxp33_ASAP7_75t_R U155 ( .A(data_in[29]), .Y(add_x_1_n4) );
+  INVxp33_ASAP7_75t_R U156 ( .A(data_in[31]), .Y(add_x_1_n2) );
+  AOI22xp33_ASAP7_75t_R U157 ( .A1(n101), .A2(add_x_1_n79), .B1(n38), .B2(n117), .Y(n39) );
+  NAND2xp33_ASAP7_75t_R U158 ( .A(extended_sum[1]), .B(n101), .Y(n102) );
+  OAI21xp33_ASAP7_75t_R U159 ( .A1(n36), .A2(n101), .B(n102), .Y(n37) );
+  NAND2xp33_ASAP7_75t_R U160 ( .A(extended_sum[3]), .B(n101), .Y(n103) );
+  OAI21xp33_ASAP7_75t_R U161 ( .A1(n40), .A2(n101), .B(n103), .Y(n41) );
+  AOI22xp33_ASAP7_75t_R U162 ( .A1(n101), .A2(add_x_1_n78), .B1(n42), .B2(n117), .Y(n43) );
+  NAND2xp33_ASAP7_75t_R U163 ( .A(extended_sum[5]), .B(n101), .Y(n104) );
+  OAI21xp33_ASAP7_75t_R U164 ( .A1(n44), .A2(n101), .B(n104), .Y(n45) );
+  AOI22xp33_ASAP7_75t_R U165 ( .A1(n101), .A2(add_x_1_n77), .B1(n46), .B2(n117), .Y(n47) );
+  NAND2xp33_ASAP7_75t_R U166 ( .A(extended_sum[7]), .B(n101), .Y(n105) );
+  OAI21xp33_ASAP7_75t_R U167 ( .A1(n48), .A2(n101), .B(n105), .Y(n49) );
+  AOI22xp33_ASAP7_75t_R U168 ( .A1(n101), .A2(add_x_1_n76), .B1(n50), .B2(n117), .Y(n51) );
+  NAND2xp33_ASAP7_75t_R U169 ( .A(extended_sum[9]), .B(n101), .Y(n106) );
+  OAI21xp33_ASAP7_75t_R U170 ( .A1(n52), .A2(n101), .B(n106), .Y(n53) );
+  AOI22xp33_ASAP7_75t_R U171 ( .A1(n101), .A2(add_x_1_n75), .B1(n54), .B2(n117), .Y(n55) );
+  NAND2xp33_ASAP7_75t_R U172 ( .A(extended_sum[11]), .B(n101), .Y(n107) );
+  OAI21xp33_ASAP7_75t_R U173 ( .A1(n56), .A2(n101), .B(n107), .Y(n57) );
+  AOI22xp33_ASAP7_75t_R U174 ( .A1(n101), .A2(add_x_1_n74), .B1(n58), .B2(n117), .Y(n59) );
+  NAND2xp33_ASAP7_75t_R U175 ( .A(extended_sum[13]), .B(n101), .Y(n108) );
+  OAI21xp33_ASAP7_75t_R U176 ( .A1(n60), .A2(n101), .B(n108), .Y(n61) );
+  AOI22xp33_ASAP7_75t_R U177 ( .A1(n101), .A2(add_x_1_n73), .B1(n62), .B2(n117), .Y(n63) );
+  NAND2xp33_ASAP7_75t_R U178 ( .A(extended_sum[15]), .B(n101), .Y(n109) );
+  OAI21xp33_ASAP7_75t_R U179 ( .A1(n64), .A2(n101), .B(n109), .Y(n65) );
+  AOI22xp33_ASAP7_75t_R U180 ( .A1(n101), .A2(add_x_1_n72), .B1(n66), .B2(n117), .Y(n67) );
+  NAND2xp33_ASAP7_75t_R U181 ( .A(extended_sum[17]), .B(n101), .Y(n110) );
+  OAI21xp33_ASAP7_75t_R U182 ( .A1(n68), .A2(n101), .B(n110), .Y(n69) );
+  AOI22xp33_ASAP7_75t_R U183 ( .A1(n101), .A2(add_x_1_n71), .B1(n70), .B2(n117), .Y(n71) );
+  NAND2xp33_ASAP7_75t_R U184 ( .A(extended_sum[19]), .B(n101), .Y(n111) );
+  OAI21xp33_ASAP7_75t_R U185 ( .A1(n72), .A2(n101), .B(n111), .Y(n73) );
+  AOI22xp33_ASAP7_75t_R U186 ( .A1(n101), .A2(add_x_1_n70), .B1(n74), .B2(n117), .Y(n75) );
+  NAND2xp33_ASAP7_75t_R U187 ( .A(extended_sum[21]), .B(n101), .Y(n112) );
+  OAI21xp33_ASAP7_75t_R U188 ( .A1(n76), .A2(n101), .B(n112), .Y(n77) );
+  AOI22xp33_ASAP7_75t_R U189 ( .A1(n101), .A2(add_x_1_n69), .B1(n78), .B2(n117), .Y(n79) );
+  NAND2xp33_ASAP7_75t_R U190 ( .A(extended_sum[23]), .B(n101), .Y(n113) );
+  OAI21xp33_ASAP7_75t_R U191 ( .A1(n80), .A2(n101), .B(n113), .Y(n81) );
+  AOI22xp33_ASAP7_75t_R U192 ( .A1(n101), .A2(add_x_1_n68), .B1(n82), .B2(n117), .Y(n83) );
+  NAND2xp33_ASAP7_75t_R U193 ( .A(extended_sum[25]), .B(n101), .Y(n114) );
+  OAI21xp33_ASAP7_75t_R U194 ( .A1(n84), .A2(n101), .B(n114), .Y(n85) );
+  AOI22xp33_ASAP7_75t_R U195 ( .A1(n101), .A2(add_x_1_n67), .B1(n86), .B2(n117), .Y(n87) );
+  NAND2xp33_ASAP7_75t_R U196 ( .A(extended_sum[27]), .B(n101), .Y(n115) );
+  OAI21xp33_ASAP7_75t_R U197 ( .A1(n88), .A2(n101), .B(n115), .Y(n89) );
+  AOI22xp33_ASAP7_75t_R U198 ( .A1(n101), .A2(add_x_1_n66), .B1(n90), .B2(n117), .Y(n91) );
+  NAND2xp33_ASAP7_75t_R U199 ( .A(extended_sum[29]), .B(n101), .Y(n116) );
+  OAI21xp33_ASAP7_75t_R U200 ( .A1(n92), .A2(n101), .B(n116), .Y(n93) );
+  AOI22xp33_ASAP7_75t_R U201 ( .A1(n101), .A2(add_x_1_n65), .B1(n94), .B2(n117), .Y(n95) );
+  NAND2xp33_ASAP7_75t_R U202 ( .A(extended_sum[31]), .B(n101), .Y(n118) );
+  OAI21xp33_ASAP7_75t_R U203 ( .A1(n96), .A2(n101), .B(n118), .Y(n97) );
+  AND2x2_ASAP7_75t_R U204 ( .A(n101), .B(extended_sum[32]), .Y(N4) );
+  NAND3xp33_ASAP7_75t_R U205 ( .A(data_in[0]), .B(n33), .C(n101), .Y(n119) );
+  A2O1A1Ixp33_ASAP7_75t_R U206 ( .A1(data_in[0]), .A2(n101), .B(n33), .C(n119), 
+        .Y(n35) );
+endmodule
+

@@ -1,0 +1,27 @@
+# Simulator and synthesis working data
+**/work/
+**/alib-*/
+**/cksum_dir/
+**/.rce/
+**/transcript
+**/vsim.wlf
+**/*.vstf
+**/*.svf
+**/*.pvl
+**/*.syn
+**/*.mr
+**/*.ddc
+
+# Locally supplied technology libraries
+Prime_time_UPF/lib/asap7_db/*.db
+Prime_time_UPF/lib/asap7_db/*.lib
+
+# Logs, editor backups, and machine-specific settings
+**/*.log
+**/*.bak
+**/*~
+**/modelsim.ini
+**/.vscode/
+**/.idea/
+Thumbs.db
+.DS_Store

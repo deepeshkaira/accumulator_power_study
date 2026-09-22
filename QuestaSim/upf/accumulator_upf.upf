@@ -1,0 +1,25 @@
+
+create_power_domain PD_ACC -include_scope
+
+# supply ports
+create_supply_port VDD -direction in
+create_supply_port VSS -direction in
+
+# supply nets
+create_supply_net VDD -domain PD_ACC
+create_supply_net VSS -domain PD_ACC
+
+# connect ports and nets
+connect_supply_net VDD -ports {VDD}
+connect_supply_net VSS -ports {VSS}
+
+# Define the primary supply pair used by every cell in PD_ACC.
+set_domain_supply_net PD_ACC -primary_power_net VDD -primary_ground_net VSS
+
+# Supply states used by power-aware simulation and the power-state table.
+add_port_state VDD -state {VDD_ON  1.0} -state {VDD_OFF off}
+add_port_state VSS -state {VSS_ON 0.0}
+
+# add_pst_state ACC_POWER_ON  -pst ACC_PST -state {VDD_ON  VSS_ON}
+# add_pst_state ACC_POWER_OFF -pst ACC_PST -state {VDD_OFF VSS_ON}
+
