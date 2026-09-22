@@ -16,3 +16,30 @@ else $error("overflow did not clear while disabled");
 a_known_outputs : assert property (@(posedge clk) disable iff (!rst_n)
     !$isunknown({acc_out, overflow}))
 else $error("Unknown accumulator output");
+
+// For OPERAND-GATED VERSION 
+
+a_input_isolated: assert property (@(posedge clk) disable iff (!rst_n)
+    !enable |-> gated_data_in == 32'b0)
+else $error("Input operand was not isolated");
+
+a_input_passes_when_enabled : assert property (@(posedge clk) disable iff (!rst_n)
+    enable |-> gated_data_in == data_in)
+else $error("Enabled input operand is incorrect");
+
+a_sum_when_disabled : assert property (@(posedge clk) disable iff (!rst_n)
+    !enable |-> extended_sum == {1'b0, acc_out})
+else $error("Combinational sum changed while disabled");
+
+
+// 3. CLOCK-GATED VERSION ONLY
+
+a_gate_request : assert property (@(posedge clk) disable iff (!rst_n)
+    gate_request == (enable || overflow))
+else $error("Clock-gate request is incorrect");
+
+always @(posedge gated_clk) begin
+    if (rst_n)
+        assert (clk === 1'b1)
+        else $error("Unexpected gated-clock edge");
+end
