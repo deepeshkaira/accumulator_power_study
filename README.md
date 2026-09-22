@@ -38,7 +38,7 @@ accumulator-power-study/
 │       ├── accumulator_power_gated.saif
 │       └── accumulator_clock_gated.saif
 └── Prime_time_UPF/
-    ├── rtl/                         # Same RTL revisions as in QuestaSim/rtl
+    ├── rtl/                         
     ├── constraints/
     │   ├── accumulator.sdc
     │   └── accumulator_clock_gated.sdc
@@ -49,12 +49,12 @@ accumulator-power-study/
     │   ├── primetime_accumulator.tcl
     │   ├── primetime_accumulator_power_gated.tcl
     │   └── primetime_accumulator_clock_gated.tcl
-    ├── lib/asap7_db/                # Place five ASAP7 RVT TT .db libraries locally
-    ├── saif/                        # Copies from QuestaSim/saif_reports
-    ├── netlist/                     # DC .v, .sdc, and optional .ddc outputs
+    ├── lib/asap7_db/               
+    ├── saif/                       
+    ├── netlist/                    
     └── reports/
-        ├── synthesis/               # DC reports, prefixed by design name
-        └── power/                   # PrimeTime reports, prefixed by design name
+        ├── synthesis/              
+        └── power/                  
 ```
 
 The `lib/asap7_db` directory must contain the same AO, INVBUF, OA, SEQ, and
