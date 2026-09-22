@@ -1,0 +1,18 @@
+// COMMON: for each accumulator RTL module
+
+// Check the result of an enabled clock edge at the next clock edge. Sampling at the next edge allows the register update to complete.
+a_add: assert property (@(posedge clk) disable iff (!rst_n)
+    enable |=> {overflow, acc_out} == ({1'b0, $past(acc_out)} + {1'b0, $past(data_in)}))
+else $error("Incorrect accumulated value or overflow");
+
+a_hold_when_disabled : assert property (@(posedge clk) disable iff (!rst_n)
+    !enable |=> acc_out == $past(acc_out))
+else $error("acc_out changed while disabled");
+
+a_clear_overflow_when_disabled : assert property (@(posedge clk) disable iff (!rst_n)
+    !enable |=> overflow == 1'b0)
+else $error("overflow did not clear while disabled");
+
+a_known_outputs : assert property (@(posedge clk) disable iff (!rst_n)
+    !$isunknown({acc_out, overflow}))
+else $error("Unknown accumulator output");
