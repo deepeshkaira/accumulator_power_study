@@ -12,8 +12,7 @@ final gated-clock edge after an overflow so it can clear that status bit.
 
 ## Repository layout
 
-Keep the QuestaSim and PrimeTime project folders as siblings. Run each tool
-from its own folder, as the existing scripts use paths relative to that folder.
+QuestaSim and PrimeTime project folders are as follows - the scripts use the same layout. 
 The files from the completed runs are collected in the layout below.
 
 ```text
