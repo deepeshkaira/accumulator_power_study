@@ -132,6 +132,10 @@ or extracted interconnect parasitics were used.
 | Leakage | 0.02050 µW | 0.02275 µW | 0.02312 µW |
 | **Total** | **16.040 µW** | **8.317 µW** | **8.465 µW** |
 
+The clock + operand-gated total is 7.575 µW (47.2%) lower than the baseline
+total in these PrimeTime reports. This is an arithmetic difference, not a
+validated power saving, because the runs did not use matched input activity.
+
 These are the power figures obtained from the available reports. **They are
 not yet a controlled three-way comparison.** The earlier baseline SAIF had
 `enable` high for approximately 98.6% of its recorded interval; the mixed
