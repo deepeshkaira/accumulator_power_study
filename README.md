@@ -58,14 +58,14 @@ accumulator-power-study/
 
 The `lib/asap7_db` directory must contain the same AO, INVBUF, OA, SEQ, and
 SIMPLE RVT TT libraries for every run. The `.db` libraries are deliberately
-excluded from this repository until their redistribution terms are confirmed;
-see `Prime_time_UPF/lib/asap7_db/README.md` for the expected filenames. Do not
-commit Questa's compiled `work` library; it is regenerated from the sources.
+excluded from this repository as they are needed to be installed from IT -no access for providing those to open public.
+see `Prime_time_UPF/lib/asap7_db/README.md` for the expected filenames.
 
-The baseline and operand-gated netlists were stored in subfolders in the
-original run directory. They are placed directly under `netlist/` here because
-the PrimeTime scripts read them from that location. This repository is an
-archive of completed runs, not yet a verified rerun from this packaged layout.
+*testbench follow the standard structure of UVM with few basic sequence runs.
+
+*The library used is 7nm , but the UPF runs have VDD specified as 1volts and VSS as 0volts.
+
+This repository is an archive of completed runs perfomed by me, not yet a verified rerun from this packaged layout.
 
 If a script currently writes reports to `reports/clock_gated` or another
 directory, either keep that directory in the repository or update its
@@ -80,7 +80,7 @@ design name so one variant cannot overwrite another.
 | Operand gated | `accumulator_power_gated` | Source clock reaches state registers | `data_in` is masked to zero |
 | Clock + operand gated | `accumulator_clock_gated` | Latch-and-AND clock gate stops register edges while idle | `data_in` is masked to zero |
 
-`accumulator_power_gated` is a historical filename. Its optimization is
+`accumulator_power_gated` is a filename. Its optimization is
 **operand isolation**, not switching off VDD. The clock-gated variant combines
 clock gating with operand isolation, so it does not isolate the power benefit
 of clock gating alone.
@@ -92,26 +92,10 @@ power switch, retention, or isolation. Consequently these results are not a
 measurement of supply power gating.
 
 ## Flow
-
-1. In `QuestaSim`, compile the selected RTL and its testbench, then run the
-   matching `.do` file. The scripts optimize with `accumulator_upf.upf`, start
-   SAIF collection after reset (`run 16ns` in the current flow), run to the
-   end of the UVM test, and write a variant-specific file to `saif_reports/`.
-2. Copy the selected RTL into `Prime_time_UPF/rtl/` and its SAIF into
-   `Prime_time_UPF/saif/`. The copies of each RTL file must be identical.
-3. From `Prime_time_UPF`, run the matching `synthesize_*.tcl` with Design
-   Compiler. Each script reads the ASAP7 libraries and SDC, then writes a
-   uniquely named Verilog netlist and exported SDC under `netlist/`.
-4. From the same folder, run the matching `primetime_*.tcl`. PrimeTime reads
-   that netlist, its exported SDC, the five ASAP7 libraries, and the matching
-   SAIF. The `read_saif -strip_path` value must match the testbench top and
-   `/dut` instance used to generate that SAIF.
-
-For the clock-gated version, the source and generated clocks must both appear
-in a real `report_clock` result. The output of `u_gate` is the generated-clock
-point used in the clock-gated SDC. After synthesis, inspect the mapped netlist
-and reference report to establish whether the clock gate and operand isolation
-survived optimization.
+Run each design variant and its testbench in QuestaSim. After reset, collect switching activity in a SAIF file for the full test sequence.
+Synthesize each variant with Design Compiler using the ASAP7 libraries and timing constraints. This produces a mapped netlist for power analysis.
+Run PrimeTime with the matching netlist, constraints, libraries, and SAIF file to generate timing and power reports.
+For the clock-gated variant, confirm that PrimeTime recognizes both the source and generated clocks. Check the mapped design to see whether clock gating and operand isolation survived synthesis.
 
 ## Power measured so far
 
@@ -147,14 +131,12 @@ and 38 loads outside the characterized table range.
 
 ## Controlled comparison to complete
 
-Run the same deterministic `acc_mixed_sequence` in all three testbenches. Its
+Ran the same deterministic `acc_mixed_sequence` in all three testbenches. Its
 100 transactions are 20 enabled, 40 disabled with changing input data, 20
 enabled, then 20 alternating. Use the same clock period, reset release,
 Questa seed, SAIF recording start, and simulation end for each run.
 
-Before comparing power, verify that the three SAIF files agree on `DURATION`
+Before comparing power, the three SAIF files should have same on `DURATION`
 and on `T0`, `T1`, `TX`, and `TC` for every primary input: `clk`, `rst_n`,
 `enable`, and each `data_in` bit. Internal signal activity is expected to
-differ. Then rerun the baseline and operand-gated PrimeTime analyses using
-their new, matched SAIF files. Only those matched results should be used to
-calculate percentage savings or rank the designs.
+differ. T
