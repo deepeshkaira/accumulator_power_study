@@ -101,8 +101,7 @@ For the clock-gated variant, confirm that PrimeTime recognizes both the source a
 
 ### Design Compiler synthesis estimates
 
-Design Compiler estimated power after synthesis using the ASAP7 libraries at
-the `PVT_0P7V_25C` condition. Values are shown in microwatts.
+Design Compiler estimated power after synthesis using the ASAP7 libraries. Values are shown in microwatts.
 
 | Power group or component | Baseline | Operand gated | Clock + operand gated |
 |---|---:|---:|---:|
