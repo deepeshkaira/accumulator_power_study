@@ -97,12 +97,22 @@ Synthesize each variant with Design Compiler using the ASAP7 libraries and timin
 Run PrimeTime with the matching netlist, constraints, libraries, and SAIF file to generate timing and power reports.
 For the clock-gated variant, confirm that PrimeTime recognizes both the source and generated clocks. Check the mapped design to see whether clock gating and operand isolation survived synthesis.
 
-## Power measured so far
+## Power measured
 
 All figures below are PrimeTime/PrimePower averaged, pre-layout estimates at
 the ASAP7 `PVT_0P7V_25C` library condition. Values are converted from watts
 to microwatts. No wire-load model or extracted interconnect parasitics were
 used.
+
+Synthesis power results - DC
+Design Compiler also estimated power after synthesis using the ASAP7 libraries at 0.7 V and 25 °C.
+Power component	Baseline	Operand isolated	Clock + operand gated
+Net switching	1.53 µW	1.56 µW	1.95 µW
+Cell internal	4.99 µW	4.98 µW	3.42 µW
+Leakage	0.0197 µW	0.0221 µW	0.0224 µW
+Total	6.54 µW	6.57 µW	5.40 µW
+
+Compared with the baseline, the clock-gated design’s Design Compiler estimate is 1.14 µW lower, a 17.4% reduction (6.54 µW → 5.40 µW). The above is a preliminary synthesis estimate.
 
 | Power group or component | Baseline | Operand gated | Clock + operand gated |
 |---|---:|---:|---:|
