@@ -111,8 +111,7 @@ the `PVT_0P7V_25C` condition. Values are shown in microwatts.
 | Leakage | 0.0197 µW | 0.0221 µW | 0.0224 µW |
 | **Total** | **6.54 µW** | **6.57 µW** | **5.40 µW** |
 
-The clock-gated design's estimated total is 1.14 µW lower than the baseline,
-a 17.4% reduction. These are preliminary, low-effort synthesis estimates:
+The clock-gated design's estimated total is 1.14 µW lower than the baseline. These are preliminary synthesis estimates:
 Design Compiler reported unannotated primary inputs, so they should not be
 compared directly with the SAIF-based results below.
 
