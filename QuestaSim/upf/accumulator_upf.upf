@@ -17,7 +17,7 @@ connect_supply_net VSS -ports {VSS}
 set_domain_supply_net PD_ACC -primary_power_net VDD -primary_ground_net VSS
 
 # Supply states used by power-aware simulation and the power-state table.
-add_port_state VDD -state {VDD_ON  1.0} -state {VDD_OFF off}
+add_port_state VDD -state {VDD_ON 0.7} -state {VDD_OFF off}
 add_port_state VSS -state {VSS_ON 0.0}
 
 # add_pst_state ACC_POWER_ON  -pst ACC_PST -state {VDD_ON  VSS_ON}
