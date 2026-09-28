@@ -63,7 +63,7 @@ see `Prime_time_UPF/lib/asap7_db/README.md` for the expected filenames.
 
 *testbench follow the standard structure of UVM with few basic sequence runs.
 
-*The library used is 7nm , but the UPF runs have VDD specified as 1volts and VSS as 0volts.
+*The library used is 7nm. Even if we change voltage from 0.7 to 1 volts - the libraries are going to work for operating voltage at 25 celcius i.e 0.7 volts
 *The power figures did not change even when the voltage in upf file was changed to 0.7 volts because the library is generating its reports at 0.7 volts. For bringing in real change there is a need of compatible library for the design.
 
 This repository is an archive of completed runs perfomed by me, not yet a verified rerun from this packaged layout.
