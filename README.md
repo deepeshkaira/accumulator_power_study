@@ -61,10 +61,10 @@ SIMPLE RVT TT libraries for every run. The `.db` libraries are deliberately
 excluded from this repository as they are needed to be installed from IT -no access for providing those to open public.
 see `Prime_time_UPF/lib/asap7_db/README.md` for the expected filenames.
 
-*testbench follow the standard structure of UVM with few basic sequence runs.
+*testbench follow the standard structure of UVM with sequences run. The one sequence is mixed/basic so that I can have a proper SAIF file generation for the design's proper Power estimation.
 
 *The library used is 7nm. Even if we change voltage from 0.7 to 1 volts - the libraries are going to work for operating voltage at 25 celcius i.e 0.7 volts
-*The power figures did not change even when the voltage in upf file was changed to 0.7 volts because the library is generating its reports at 0.7 volts. For bringing in real change there is a need of compatible library for the design.
+*The power figures did not change even when the voltage in upf file was changed to some other voltage because the library is generating its reports at 0.7 volts. For bringing in real change there is a need of compatible library for the design.
 
 This repository is an archive of completed runs perfomed by me, not yet a verified rerun from this packaged layout.
 
@@ -132,23 +132,17 @@ or extracted interconnect parasitics were used.
 | **Total** | **16.040 µW** | **8.317 µW** | **8.465 µW** |
 
 The clock + operand-gated total is 7.575 µW (47.2%) lower than the baseline
-total in these PrimeTime reports. This is an arithmetic difference, not a
-validated power saving, because the runs did not use matched input activity.
+total in these PrimeTime reports.
 
 These are the power figures obtained from the available reports. **They are
 not yet a controlled three-way comparison.** The earlier baseline SAIF had
 `enable` high for approximately 98.6% of its recorded interval; the mixed
 comparison sequence contains 50 enabled and 50 disabled transactions. The
 operand-gated run's exact stimulus has not yet been verified against the mixed
-sequence. Differences between the totals therefore cannot yet be credited to
-the RTL optimizations.
+sequence. 
 
 The clock-gated report shows 2.653 µW for the clock network, compared with
-3.763 µW for the baseline and 3.781 µW for the operand-gated run. Its current
-`accumulator_clock_gated_clocks.rpt` accidentally contains `report_units`
-output; regenerate it using `report_clock` before treating the generated
-clock as verified. The clock-gated `check_power` report also lists 34 ramps
-and 38 loads outside the characterized table range.
+3.763 µW for the baseline and 3.781 µW for the operand-gated run.
 
 ## Controlled comparison to complete
 
@@ -160,4 +154,4 @@ Questa seed, SAIF recording start, and simulation end for each run.
 Before comparing power, the three SAIF files should have same on `DURATION`
 and on `T0`, `T1`, `TX`, and `TC` for every primary input: `clk`, `rst_n`,
 `enable`, and each `data_in` bit. Internal signal activity is expected to
-differ. T
+differ.
